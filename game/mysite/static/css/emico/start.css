@@ -1,0 +1,136 @@
+
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    min-height: 100%; min-width: 100%;
+}
+.name{
+    font-family: "Microsoft JhengHei", Verdana, Halvetica, Arial;
+    width:300px;
+    margin: auto;
+    padding: 5px;
+    float:left;
+}
+
+
+
+.circular--square {
+  border-radius: 50%;
+  border:5px white solid;
+  content:url("/static/images/emico.png");
+  width:100px;
+  height:100px;
+}
+
+#wrapper {
+    min-height: 100%;
+    position: relative;
+}
+div.name{
+  font-family: "Microsoft JhengHei", Verdana, Halvetica, Arial;
+	width:300px;
+	margin: auto;
+  padding: 5px;
+  float:left;
+}
+div{
+  font-family: "Microsoft JhengHei", Verdana, Halvetica, Arial;
+}
+
+.dropbtn {
+  background-color:  rgba(225,225,225,0.9);
+  color: black;
+  margin-right:5px;
+  padding: 13px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  margin-right:5px;
+  display: none;
+  position: absolute;
+  right: 3px;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 9px 13px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #FF7F50;
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #FF7F50;
+  color: white;
+}
+.foot {
+    font-family: "Microsoft JhengHei", Verdana, Halvetica, Arial;
+    padding: 10px;
+    background-color: rgba(225,225,225,0.9);
+    position: absolute;
+    float:center;
+    bottom: 8px;
+    width: 90%;
+    margin-left:2.5%;
+    border-radius:20px;
+    font-size:30px;
+}
+
+.foot2{
+    padding: 40px; 
+    background-color: rgba(225,225,225,0.9);
+    position: absolute;
+    bottom:8px;
+    width: 90%;
+    margin-left:2.5%;
+    float:center; 
+    border-radius: 20px;
+    font-size:30px;
+}
+
+.button{
+  font-family: "Microsoft JhengHei", Verdana, Halvetica, Arial;
+  background-color: rgba(225,225,225,0);
+  color:black;
+  height: 55px;
+  width: 450px;
+  text-align: center;
+  font-size: 32px;
+  margin: 4px 2px;
+  border-radius: 10px;
+  border: none;
+}
+
+.button:hover {
+  font-family: "Microsoft JhengHei", Verdana, Halvetica, Arial;
+  background-color: #FF7F50;
+  color:white;
+}
+
+.next{
+  position:absolute;
+  right:1%;
+  bottom:1%; 
+}

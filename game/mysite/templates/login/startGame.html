@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+<title>我的台科物語</title>
+<style> 
+html { 
+  background: url({% static 'images/首頁.jpg' %}) no-repeat center fixed; 
+  background-size: cover;
+}
+
+.bluebutton {
+  width: 250px;
+  height: 100px;
+  background-color: #3366ff;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 9px #999;
+}
+
+.bluebutton:hover {background-color: #3333ff}
+
+.bluebutton:active {
+  background-color: #3333ff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.button1 {
+  position: fixed;
+  left: 150px;
+  top: 80%;
+}
+
+.button2 {
+  position: fixed;
+  right: 150px;
+  top: 80%;
+}
+
+.redbutton {
+  width: 200px;
+  height: 200px;
+  background-color: tomato;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 9px #999;
+}
+
+.redbutton:hover {background-color: #cc0000}
+
+.redbutton:active {
+  background-color: #cc0000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.startbutton {
+  position: fixed;
+  left: 43%;
+  top: 70%;
+}
+
+body { 
+  color: white;
+}
+</style>
+
+</head>
+
+<body>
+<iframe style="display:none" src="{% static 'music/page1.mp3' %}" allow="autoplay" id="audio"></iframe>
+<a href="gameIntroduction"><button class="bluebutton button1">遊戲說明</button></a>
+<a href="teamIntroduction"><button class="bluebutton button2">創辦團隊</button></a>  
+<a href="selectCharactor"><button class="redbutton startbutton">進入<br>遊戲</button></a>
+<img src="{% static 'images/細藍字黃底.png' %}" style="position: absolute; top: 10%;">
+<!--<img src="深藍底.png" width="1350" height="350">-->
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{% static 'css/karen/start.css' %}">
+<html>
+<head>
+  <title>我的台科物語</title>
+
+</head>
+<body  background="{% static 'images/karen/夜唱嗎.png' %}"> 
+<div class="id_wrapper">
+  <div class="name">
+    <div style="float:left;">
+    <img class="circular--square"/>
+    </div>
+    <div class="namefont" style="float:left;font-size:50px;color:#FF7F50; -webkit-text-stroke: 1px #FF7F50;text-align:center;line-height:110px; border-radius:5px;">
+      {{User.name}}
+      </div>
+    </div>
+  <div class="dropdown" style="float:right;">
+      <button class="dropbtn" style="font-size: 15px;">選單</button>
+      <div class="dropdown-content">
+        <a href="#">儲存目前進度</a>
+        <a href="{% url 'startGame' %}">回主頁</a>
+      </div>
+  </div>
+  <div class="foot" style="float:right; border-radius: 20px;">
+    &nbsp &nbsp 要不要跟同學去夜唱呢<br>
+    <div style="text-align: center;">
+      <button class="button" onclick="location.href='{% url 'ktvgok' %}'"; >要</button>
+      <button class="button" onclick="location.href='{% url 'secondDrop1k' %}'";>不要</button><br>
+    </div>
+  </div>
+</div>
+</body>
+</html>

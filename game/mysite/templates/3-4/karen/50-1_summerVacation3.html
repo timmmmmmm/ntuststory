@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{% static 'css/karen/start.css' %}">
+<html>
+<head>
+  <title>我的台科物語</title>
+</head>
+<body background="https://upload.wikimedia.org/wikipedia/commons/6/61/%E5%8F%B0%E5%8D%97%E5%B8%82%E6%AD%B8%E4%BB%81%E5%8D%80_%E5%8F%B0%E5%8D%97%E9%AB%98%E9%90%B5%E7%AB%99_%E9%AB%98%E9%90%B5%E5%88%97%E8%BB%8A_-_panoramio_%281%29.jpg">
+<div id="id_wrapper">
+  <div class="name">
+    <div style="float:left;">
+    <img class="circular--square"/>
+    </div>
+    <div class="namefont" style="float:left;font-size:50px;color:#FF7F50; -webkit-text-stroke: 1px #FF7F50;text-align:center;line-height:110px; border-radius:5px;">
+      {{User.name}}
+      </div>
+    </div>
+  <div class="dropdown" style="float:right;">
+      <button class="dropbtn">選單</button>
+      <div class="dropdown-content">
+        <a href="#">儲存目前進度</a>
+        <a href="{% url 'startGame' %}">回主頁</a>
+      </div>
+  </div>
+  <div class="foot2" >
+      <span id="demo">回家好好放鬆，珍惜跟家人相處的時光。</span>
+      <img class="next"src="https://img.icons8.com/ios/50/000000/arrow.png" width="100" onclick="location.href='{% url 'seniork' %}'";>  
+    </footer>
+  </div>
+</div>
+</body>
+</html>

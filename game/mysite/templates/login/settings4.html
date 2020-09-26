@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+  <title>GameIntroduction</title>
+</head>
+<style>
+
+html { 
+  background: url("https://www.freegreatpicture.com/files/191/19820-blue-vintage-wallpaper-background.jpg") no-repeat center fixed; 
+  background-size: cover;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #20B2AA;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input[type=submit]:hover {
+  background-color: #008080;
+}
+
+div {
+  border-radius: 5px;
+  background-color: lightgray;
+  padding: 20px;
+  width: 30%;
+  position:absolute;
+  top:300px;
+  left:200px;
+  font-size: 20px;
+}
+
+#return {
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+
+#DIV_PHOTO {
+  position:absolute;
+  top:60px;
+  left:770px;
+}
+
+h1 {
+  text-align: center;
+  font-size:250%;
+}
+
+label {
+  font-weight: bold;
+  font-family: "Microsoft JhengHei", Verdana, Halvetica, Arial;
+  font-size: 30px;
+  color: #040507;
+  display: block;
+}
+
+</style>
+
+<body>
+
+<h1>設定你的小公仔</h1>
+
+<iframe style="display:none" src="{% static 'music/leo.mp3' %}" allow="autoplay" id="audio"></iframe>
+
+<a href="{% url 'selectCharactor' %}"><img id="return" src="https://image.flaticon.com/icons/png/512/35/35724.png" width="100" height="100"></a>
+
+<div>
+  <form action="." method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type='submit' />
+  </form>
+</div>
+
+<img id="DIV_PHOTO" src="{% static 'images/leo.png' %}" width="430" height="530">
+</div>
+
+</body>
+</html>

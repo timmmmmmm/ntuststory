@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+	<title>GameIntroduction</title>
+</head>
+
+<style>
+
+#return {
+position: absolute;
+left: 0;
+top: 0;
+}
+
+#bbg {
+	width: 550px;
+	height: 120px;
+	position: absolute;
+	top: 0;
+	left: 450px;
+	z-index: -1;
+	opacity: 0.8;
+}
+
+body {
+	background-color: #ccffe6;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+</style>
+
+<body>
+<iframe style="display:none" src="{% static 'music/page1.mp3' %}" allow="autoplay" id="audio"></iframe>
+<img id="bbg" src="{% static 'images/bluebackground.png' %}">
+<center><h1>歡迎來到台科物語</h1></center>
+<a href="{% url 'startGame' %}"><img id="return" src="https://image.flaticon.com/icons/png/512/35/35724.png" width="100" height="100"></a>
+<br>
+<center><p style="font-size: 35px">如果人生可以重來<br>你會做出一樣的選擇嗎？</p></center>
+<center><p style="font-size: 25px">這是一款台科人生RPG遊戲<br>讓你選擇你想要的大學生活<br>來看看大學四年後你會成為怎樣的人</p></center>
+<center><p style="font-size: 25px">遊戲規則：沒有規則<br>依照個人興趣選擇即可</p></center>
+<center><img src="{% static 'images/havefun.png' %}" width="450px" height="300px"></center>
+</body>
+
+</html>

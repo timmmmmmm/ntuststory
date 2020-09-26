@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{% static 'css/emico/start.css' %}">
+<html>
+<head>
+	<title>我的台科物語</title>
+</head>
+<body  background="{% static 'images/draw.jpg' %}">
+<iframe style="display:none" src="{% static 'music/dead.mp3' %}" allow="autoplay" id="audio"></iframe>
+<div id="id_wrapper">
+	<div class="name">
+    <div style="float:left;">
+    <img class="circular--square"/>
+    </div>
+    <div class="namefont" style="float:left;font-size:50px;color:#FF7F50; -webkit-text-stroke: 1px #FF7F50;text-align:center;line-height:110px; border-radius:5px;">
+      {{User.name}}
+      </div>
+  	</div>
+	<div class="dropdown" style="float:right;">
+  		<button class="dropbtn">選單</button>
+  		<div class="dropdown-content">
+  			<a href="#">儲存目前進度</a>
+  			<a href="{% url 'startGame' %}">回主頁</a>
+  		</div>
+	</div>
+
+	<div class="foot2">
+      <span id="demo">還是被抓到了QQ！</span>
+      <img class="next"src="https://img.icons8.com/ios/50/000000/arrow.png" width="100" onclick="location.href='{% url 'home' %}'";>  </footer>
+  </div>
+</body>
+</html>

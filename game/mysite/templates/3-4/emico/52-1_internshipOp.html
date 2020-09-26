@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{% static 'css/emico/start.css' %}">
+<html>
+<head>
+	<title>我的台科物語</title>
+
+</head>
+<body  background="http://jpninfo.com/wp-content/uploads/sites/2/2016/04/Fotolia_186420452_Subscription_Monthly_M.jpg">	
+<div class="id_wrapper">
+	<div class="name">
+		<div style="float:left;">
+		<img class="circular--square"/>
+		</div>
+		<div class="namefont" style="float:left;font-size:50px;color:#FF7F50; -webkit-text-stroke: 1px #FF7F50;text-align:center;line-height:110px; border-radius:5px;">
+      {{User.name}}
+    	</div>
+  	</div>
+	<div class="dropdown" style="float:right;">
+  		<button class="dropbtn" style="font-size: 15px;">選單</button>
+  		<div class="dropdown-content">
+  			<a href="#">儲存目前進度</a>
+  			<a href="{% url 'startGame' %}">回主頁</a>
+  		</div>
+	</div>
+  <div class="foot" style="float:right; border-radius: 20px;">
+    &nbsp &nbsp 該去哪家公司實習呢？？？<br><br>
+    <div style="text-align: center;">
+      <button class="button" onclick="location.href='{% url 'work' %}'"; >去A銀行數位金融部門</button>
+      <button class="button" onclick="location.href='{% url 'work' %}'";>去B科技公司擔任後端工程師</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

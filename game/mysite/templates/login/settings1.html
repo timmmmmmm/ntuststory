@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+  <title>GameIntroduction</title>
+</head>
+<style>
+
+html { 
+  background: url("https://img.freepik.com/free-vector/blue-abstract-acrylic-brush-stroke-textured-background_53876-86373.jpg?size=626&ext=jpg") no-repeat center fixed; 
+  background-size: cover;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+input[type=submit] {
+  font-weight: bold;
+  width: 100%;
+  background-color: #9ab3e5;
+  color: black;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+input[type=submit]:hover {
+  background-color: #4976d0;
+  color: white;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #7575a3;
+  color: white;
+  padding: 20px;
+  width: 30%;
+  position:absolute;
+  top:300px;
+  left:200px;
+  font-size: 20px;
+}
+
+#return {
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+
+#DIV_PHOTO {
+  position:absolute;
+  top:70px;
+  left:800px;
+}
+
+h1 {
+  text-align: center;
+  font-size:250%;
+}
+
+label {
+  font-weight: bold;
+  font-family: "Microsoft JhengHei", Verdana, Halvetica, Arial;
+  font-size: 30px;
+  color: #040507;
+  display: block;
+}
+
+
+</style>
+
+<body>
+
+<h1>設定你的小公仔</h1>
+
+<iframe style="display:none" src="{% static 'music/emico.mp3' %}" allow="autoplay" id="audio"></iframe>
+
+<a href="{% url 'selectCharactor' %}"><img id="return" src="https://image.flaticon.com/icons/png/512/35/35724.png" width="100" height="100"></a>
+
+<div>
+  <form action="." method="POST">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <input type='submit' />
+  </form>
+</div>
+
+<img id="DIV_PHOTO" src="{% static 'images/emico.png' %}" width="380" height="500">
+</div>
+
+</body>
+</html>

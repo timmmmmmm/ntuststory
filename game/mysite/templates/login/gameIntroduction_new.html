@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Accumen
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20120712
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<title>我的台科物語</title>
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
+		<link href="http://fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+	</head>
+	<body>
+		<iframe style="display:none" src="{% static 'music/page1.mp3' %}" allow="autoplay" id="audio"></iframe>
+		<a href="{% url 'startGame' %}"><img id="return" src="https://image.flaticon.com/icons/png/512/35/35724.png" width="100" height="100"></a>
+		<div id="wrapper">
+			<div id="header">
+				<div id="logo">
+					<h1>遊戲介紹</h1>
+				</div>
+				<div>
+					<img id="lines" src="{% static 'images/條紋.png' %}" width="900px" height="150px">
+				</div>
+			</div>
+			<div id="page">
+				<p id="introduction">歡迎來到台科物語</p>
+				<p>如果人生可以重來，你會做出一樣的選擇嗎？</p>
+				<p>這是一款台科人生RPG遊戲，讓你選擇你想要的大學生活。
+				</p>
+				<p>來看看大學四年後你會成為怎樣的人吧！</p>
+				<p>遊戲規則：沒有規則，依照興趣選擇即可</p>
+				<p>建議使用Chrome瀏覽器，並於全螢幕模式下遊玩以享有最佳遊戲體驗</p>
+			</div>
+			<div id="page-bottom">
+				<br>
+			</div>
+		</div>
+		<div id="footer">
+			&copy; Produced by NTUST/108-team11
+		</div>
+	</body>
+</html>

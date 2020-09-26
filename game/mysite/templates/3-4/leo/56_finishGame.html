@@ -1,0 +1,239 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+  <title>我的台科物語</title>
+</head>
+
+<style>
+
+div{
+  font-family: "Microsoft JhengHei", Verdana, Halvetica, Arial;
+}
+
+html { 
+  background: url("{% static 'images/home.jpg' %}") no-repeat center fixed; 
+  background-size: cover;
+}
+
+#DIV_PHOTO {
+  position:absolute;
+  top:180px;
+  left:200px;
+}
+
+#name {
+  font-size: 40px;
+  position:absolute;
+  top:600px;
+  left:370px;
+} 
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+p {
+  font-size: 15px;
+}
+
+#family {
+  font-size: 35px;
+  position: absolute;
+  top: 140px;
+}
+
+#study {
+  font-size: 35px;
+  position: absolute;
+  top: 230px;
+  right: 500px;
+}
+
+#social {
+  font-size: 35px;
+  position: absolute;
+  top: 320px;
+  right: 500px;
+}
+
+#health {
+  font-size: 35px;
+  position: absolute;
+  top: 410px;
+  right: 250px;
+}
+
+#money {
+  font-size: 35px;
+  position: absolute;
+  top: 500px;
+  right: 500px;
+}
+
+#love {
+  font-size: 35px;
+  position: absolute;
+  top: 590px;
+  right: 500px;
+}
+
+#playAgain {
+	font-size: 40px;
+ 	position: absolute;
+ 	right: 80px;
+ 	bottom: 100px;
+}
+
+.bluebutton {
+  width: 100px;
+  height: 60px;
+  background-color: #3366ff;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 9px #999;
+}
+
+.bluebutton:hover {background-color: #3333ff}
+
+.bluebutton:active {
+  background-color: #3333ff;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.redbutton {
+  width: 100px;
+  height: 60px;
+  background-color: tomato;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 9px #999;
+}
+
+.redbutton:hover {background-color: #cc0000}
+
+.redbutton:active {
+  background-color: #cc0000;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.yesbutton {
+  position: fixed;
+  right: 195px;
+  bottom: 25px;
+}
+
+.nobutton {
+  position: fixed;
+  right: 60px;
+  bottom: 25px;
+}
+
+</style>
+
+<body>
+<iframe style="display:none" src="{% static 'music/mole1.mp3' %}" allow="autoplay" id="audio"></iframe>
+<h1>恭喜你過完大學生活了！</h1>
+<img id="DIV_PHOTO" src="{% static 'images/leo/leo.png' %}" width="400" height="450">
+<p id="name">{{User.name}}</p>
+
+<div id="family" style="position:absolute;
+left:50%;">家庭：{{User.family}}分<p id="comment_family"></p></div>
+
+<div id="study"  style="position:absolute;
+left:50%;">課業：{{User.education}}分<p id="comment_education"></p></div>
+
+<div id="social"  style="position:absolute;
+left:50%;">社交：{{User.friendship}}分<p id="comment_friendship"></p></div>
+
+<div id="health" style="position:absolute;
+left:50%;">健康：{{User.health}}分<p id="comment_health"></p></div>
+
+<div id="money"  style="position:absolute;
+left:50%;">金錢：{{User.wealth}}分<p id="comment_wealth"></p></div>
+
+<div id="love"  style="position:absolute;
+left:50%;">愛情：{{User.love}}分<p id="comment_love"></p></div>
+
+<div id="playAgain">Play Again?</div>
+<a href="{% url 'startGame' %}"><button class="bluebutton yesbutton">Yes</button></a>
+<a href="{% url 'gameOver' %}"><button class="redbutton nobutton">No</button></a>
+
+</body>
+<script>
+  //family
+if ({{User.family}} >= 60) {
+  text = "孝順的孩子，讚！";
+} else if({{User.family}} == 0){
+  text = "偶爾回個家吧";
+} else{
+  text = "過年還是要回家啦";
+}
+document.getElementById("comment_family").innerHTML = text;
+
+//education
+if ({{User.education}} < 50) {
+  text = "對課業要再多用點心！";
+} else if({{User.education}} >= 80){
+  text = "學霸是你！？";
+} else{
+  text = "成績還不差";
+}
+document.getElementById("comment_education").innerHTML = text;
+
+//friendship
+if ({{User.friendship}} < 40) {
+  text = "多與他人往來，或許有意想不到的收穫";
+} else if({{User.friendship}} >= 80){
+  text = "天啊！社交高手";
+} else{
+  text = "社交生活還不錯";
+}
+document.getElementById("comment_friendship").innerHTML = text;
+
+//health
+if ({{User.health}} < 90) {
+  text = "第一餐不吃對身體不好歐";
+}else{
+  text = "身體健康";
+}
+document.getElementById("comment_health").innerHTML = text;
+
+//wealth
+if ({{User.wealth}} < 50) {
+  text = "大學花這麼多錢，之後得賺回來才行呢";
+} else{
+  text = "理財觀念不錯歐";
+}
+document.getElementById("comment_wealth").innerHTML = text;
+
+//love for men
+if ({{User.love}} >= 100) {
+  text = "恭喜覓得良緣";
+} else{
+  text = "其實男的也不錯啦";
+}
+document.getElementById("comment_love").innerHTML = text;
+</script>
+</html>

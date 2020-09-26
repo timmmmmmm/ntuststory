@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="{% static 'css/leo/start.css' %}">
+<html>
+<head>
+  <title>我的台科物語</title>
+</head>
+<body background="https://www.tripsavvy.com/thmb/9zeGnQWM6sqbQvz7choWhWdzgv8=/2121x1414/filters:no_upscale()/Best-Bus-Tours-NYC-c-Alexander-Spatari-Creative-RM-Getty-Images-5809019f5f9b58564c32a295.jpg">
+<div id="id_wrapper">
+  <div class="name">
+    <div style="float:left;">
+    <img class="circular--square"/>
+    </div>
+    <div class="namefont" style="float:left;font-size:50px;color:#FF7F50; -webkit-text-stroke: 1px #FF7F50;text-align:center;line-height:110px; border-radius:5px;">
+      {{User.name}}
+      </div>
+    </div>
+  <div class="dropdown" style="float:right;">
+      <button class="dropbtn">選單</button>
+      <div class="dropdown-content">
+        <a href="#">儲存目前進度</a>
+        <a href="{% url 'startGame' %}">回主頁</a>
+      </div>
+  </div>
+  <div class="foot2" >
+      <span id="demo">去美國好好加強英文好了，不然大學英文退步好多...</span>
+      <img class="next"src="https://img.icons8.com/ios/50/000000/arrow.png" width="100" onclick="location.href='{% url 'exchangeYl' %}'";>  
+    </footer>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+
+<head>
+	<title>TeamIntroduction</title>
+</head>
+
+<style>
+
+#return {
+position: absolute;
+left: 0;
+top: 0;
+}
+
+#rbg {
+	width: 400px;
+	height: 100px;
+	z-index: -1;
+	position: absolute;
+	top: 10px;
+	left: 530px;
+}
+
+body {
+	background-color: rgba(255, 99, 71, 0.3);
+}
+
+h1 {
+	font-size: 40px;
+}
+
+#emico {
+	position: absolute;
+	left: 9%;
+	font-size: 30px;
+}
+
+#karen {
+	position: absolute;
+	left: 34%;
+	font-size: 30px;
+}
+
+#timmy {
+	position: absolute;
+	left: 59%;
+	font-size: 30px;
+}
+
+#leo {
+	position: absolute;
+	left: 85%;
+	font-size: 30px;
+}
+
+</style>
+
+<body>
+<img id="rbg" src="{% static 'images/redbackground.png' %}">
+<center><h1>團隊成員介紹</h1></center>
+<a href="{% url 'startGame' %}"><img id="return" src="https://image.flaticon.com/icons/png/512/35/35724.png" width="100" height="100"></a>
+<br>
+<br>
+<img src="https://scontent.ftpe11-2.fna.fbcdn.net/v/t1.0-9/50549174_2147692821954578_895392443745173504_n.jpg?_nc_cat=104&_nc_ht=scontent.ftpe11-2.fna&oh=ba9ff99ea363d860fa0fe33d7a4519fc&oe=5D3CC229" width="350px" height="350px">
+<img src="https://scontent.ftpe12-2.fna.fbcdn.net/v/t1.0-9/44852268_1654215528013603_6975785027741155328_n.jpg?_nc_cat=109&_nc_ht=scontent.ftpe12-2.fna&oh=1e72939a9f022c8bcf52a1ecd4c2fc69&oe=5D2D040F" width="350px" height="350px">
+<img src="https://scontent.ftpe11-1.fna.fbcdn.net/v/t1.0-9/20265086_1401819153234460_3691127036653094925_n.jpg?_nc_cat=107&_nc_ht=scontent.ftpe11-1.fna&oh=39f8e37a920282c400191c7bda42f31b&oe=5D2BB70D" width="350px" height="350px">
+<img src="https://scontent.ftpe11-2.fna.fbcdn.net/v/t1.0-9/21752079_1485778601516990_97884101354552530_n.jpg?_nc_cat=106&_nc_ht=scontent.ftpe11-2.fna&oh=c637103c76da38c6313613a11a375ac7&oe=5D753823" width="350px" height="350px">
+<p id="emico">Emico<br><br>Front-end</p>
+<p id="karen">Karen<br><br>Front-end</p>
+<p id="timmy">Timmy<br><br>Back-end</p>
+<p id="leo">Leo<br><br>Back-end</p>
+</body>
+
+</html>
